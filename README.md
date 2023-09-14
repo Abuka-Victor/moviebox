@@ -41,3 +41,7 @@ To get started with MovieBox on your local machine, follow these steps:
 - **RESTful API Integration:** It uses a RESTful API to fetch and display movie data, ensuring that you have access to the latest information.
 
 - **State Management:** Redux is employed for state management, allowing for efficient data handling and real-time updates.
+
+## Sample
+
+![Website Sample PNG](./sample_screenshot.png)
