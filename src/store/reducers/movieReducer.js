@@ -34,6 +34,14 @@ export const movieAPI = createApi({
       }),
       transformResponse: (response) => response.results,
     }),
+    getMovieByID: builder.query({
+      query: (movie_id) => ({ url: `movie/${movie_id}?language=en-US` }),
+    }),
+    getMovieCreditsByID: builder.query({
+      query: (movie_id) => ({
+        url: `movie/${movie_id}/credits?language=en-US`,
+      }),
+    }),
   }),
 });
 
@@ -41,4 +49,6 @@ export const {
   useGetMovieListQuery,
   useGetGenreListQuery,
   useGetPopularMovieListQuery,
+  useGetMovieByIDQuery,
+  useGetMovieCreditsByIDQuery,
 } = movieAPI;

@@ -1,10 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/tv.png';
 import { MagnifyingGlassIcon, Bars2Icon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex w-11/12 justify-between mx-auto items-center absolute top-4 sm:left-14 left-4 text-white z-10">
-      <div className="flex items-center gap-2">
+      <div
+        className="flex items-center gap-2 cursor-pointer"
+        onClick={() => navigate('/')}
+      >
         <img src={logo} alt="" className="w-[50px] h-[50px]" />
         <h2 className="font-medium text-2xl">MovieBox</h2>
       </div>
