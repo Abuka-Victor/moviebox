@@ -15,7 +15,7 @@ export const movieAPI = createApi({
   endpoints: (builder) => ({
     getMovieList: builder.query({
       query: () => ({
-        url: 'discover/movie?include_adult=false&include_video=false&language=en-US&page=2',
+        url: 'movie/top_rated?language=en-US&page=1',
       }),
       transformResponse: (response) => response.results,
     }),
