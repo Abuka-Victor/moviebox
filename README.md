@@ -45,3 +45,5 @@ To get started with MovieBox on your local machine, follow these steps:
 ## Sample
 
 ![Website Sample PNG](./sample_screenshot.png)
+
+![Website Sample 2 PNG](./sample_screenshot2.png)
