@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'movie/:movieId',
+        path: 'movies/:movieId',
         element: <MovieDetail />,
       },
     ],

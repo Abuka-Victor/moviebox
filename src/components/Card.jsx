@@ -24,7 +24,7 @@ const Card = (props) => {
           src={`https://image.tmdb.org/t/p/original${props.poster_path}`}
           alt={props.original_title}
           className="h-80 w-60 object-cover cursor-pointer"
-          onClick={() => navigate(`/movie/${props.id}`)}
+          onClick={() => navigate(`/movies/${props.id}`)}
         />
         <div className="flex justify-between px-5 absolute top-5 left-0 w-full z-10">
           <p className="text-xs bg-gray-500 rounded-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 w-20 px-2 py-1 flex justify-center items-center text-center text-white">
@@ -46,7 +46,7 @@ const Card = (props) => {
       </p>
       <h6
         className="mt-3 font-bold text-lg cursor-pointer"
-        onClick={() => navigate(`/movie/${props.id}`)}
+        onClick={() => navigate(`/movies/${props.id}`)}
       >
         {props.original_title}
       </h6>
