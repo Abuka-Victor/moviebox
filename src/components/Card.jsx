@@ -25,6 +25,7 @@ const Card = (props) => {
           alt={props.original_title}
           className="h-80 w-60 object-cover cursor-pointer"
           onClick={() => navigate(`/movies/${props.id}`)}
+          data-testid="movie-poster"
         />
         <div className="flex justify-between px-5 absolute top-5 left-0 w-full z-10">
           <p className="text-xs bg-gray-500 rounded-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 w-20 px-2 py-1 flex justify-center items-center text-center text-white">
@@ -41,12 +42,16 @@ const Card = (props) => {
           </p>
         </div>
       </div>
-      <p className="text-[#9CA3AF] text-xs mt-3">
+      <p
+        className="text-[#9CA3AF] text-xs mt-3"
+        data-testid="movie-release-date"
+      >
         {props.original_language.toUpperCase()} {props.release_date}
       </p>
       <h6
         className="mt-3 font-bold text-lg cursor-pointer"
         onClick={() => navigate(`/movies/${props.id}`)}
+        data-testid="movie-title"
       >
         {props.original_title}
       </h6>

@@ -44,9 +44,16 @@ const MovieDetail = (props) => {
         <div className="flex justify-between items-center mb-6 sm:flex-row flex-col">
           <div className="flex gap-4 items-center">
             <p className="text-2xl">
-              {movieDetails.original_title} •{' '}
-              {isLoading ? 'Year' : movieDetails.release_date.slice(0, 4)} • PG-
-              {movieDetails.adult ? '13' : '18'} • {movieDetails.runtime}m
+              <span data-testid="movie-title">
+                {movieDetails.original_title}
+              </span>
+              •{' '}
+              <span data-testid="movie-release-date">
+                {isLoading ? 'Year' : movieDetails.release_date}
+              </span>
+              • PG-
+              {movieDetails.adult ? '13' : '18'} •
+              <span data-testid="movie-runtime">{movieDetails.runtime}m</span>
             </p>
             {isLoading
               ? 'Genres'
@@ -74,7 +81,9 @@ const MovieDetail = (props) => {
 
         <div className="sm:grid sm:grid-cols-[8fr_4fr] gap-7 flex flex-col">
           <div className="text-xl font-light">
-            <p className="mb-9">{movieDetails.overview}</p>
+            <p className="mb-9" data-testid="movie-overview">
+              {movieDetails.overview}
+            </p>
             <p className="mb-8">
               Director : <span className="text-[#BE123C]">Steve Boeddeker</span>
             </p>

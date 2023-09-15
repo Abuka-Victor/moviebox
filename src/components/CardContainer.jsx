@@ -17,7 +17,7 @@ const CardContainer = () => {
       ) : (
         <Fragment>
           {data.map((movie) => {
-            return <Card {...movie} key={movie.id} />;
+            return <Card {...movie} key={movie.id} data-testid="movie-card" />;
           })}
         </Fragment>
       )}
