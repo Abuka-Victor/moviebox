@@ -16,9 +16,13 @@ const CardContainer = () => {
         <Spinner />
       ) : (
         <Fragment>
-          {data.map((movie) => {
-            return <Card {...movie} key={movie.id} data-testid="movie-card" />;
-          })}
+          {data
+            .filter((_, id) => id <= 9)
+            .map((movie) => {
+              return (
+                <Card {...movie} key={movie.id} data-testid="movie-card" />
+              );
+            })}
         </Fragment>
       )}
     </div>

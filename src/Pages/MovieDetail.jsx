@@ -16,17 +16,17 @@ import {
 import { Fragment } from 'react';
 
 const MovieDetail = (props) => {
-  const { movieId } = useParams();
+  const { id } = useParams();
   const {
     data: movieDetails = [],
     isLoading,
     error,
-  } = useGetMovieByIDQuery(movieId);
+  } = useGetMovieByIDQuery(id);
   const {
     data: movieCredits = { cast: [], crew: [] },
     isLoadingCredits,
     errorCredits,
-  } = useGetMovieCreditsByIDQuery(movieId);
+  } = useGetMovieCreditsByIDQuery(id);
   const {
     data: movieList = [],
     isLoadingList,
@@ -49,7 +49,9 @@ const MovieDetail = (props) => {
               </span>
               •{' '}
               <span data-testid="movie-release-date">
-                {isLoading ? 'Year' : movieDetails.release_date}
+                {isLoading
+                  ? 'Year'
+                  : new Date(movieDetails.release_date).toUTCString()}
               </span>
               • PG-
               {movieDetails.adult ? '13' : '18'} •
