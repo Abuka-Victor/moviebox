@@ -55,7 +55,9 @@ const MovieDetail = (props) => {
               </span>
               • PG-
               {movieDetails.adult ? '13' : '18'} •
-              <span data-testid="movie-runtime">{movieDetails.runtime}m</span>
+              <span>
+                <span data-testid="movie-runtime">{movieDetails.runtime}</span>m
+              </span>
             </p>
             {isLoading
               ? 'Genres'
