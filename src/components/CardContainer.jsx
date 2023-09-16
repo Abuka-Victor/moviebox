@@ -19,9 +19,7 @@ const CardContainer = () => {
           {data
             .filter((_, id) => id <= 9)
             .map((movie) => {
-              return (
-                <Card {...movie} key={movie.id} data-testid="movie-card" />
-              );
+              return <Card {...movie} key={movie.id} />;
             })}
         </Fragment>
       )}
