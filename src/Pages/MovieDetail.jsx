@@ -51,7 +51,7 @@ const MovieDetail = (props) => {
               </span>
               •{' '}
               <span data-testid="movie-release-date">
-                {isLoading ? 'Year' : getTime(movieDetails.release_date)}
+                {getTime(movieDetails.release_date)}
               </span>
               • PG-
               {movieDetails.adult ? '13' : '18'} •

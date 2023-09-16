@@ -46,8 +46,9 @@ const Card = (props) => {
       </div>
       <p className="text-[#9CA3AF] text-xs mt-3">
         {props.original_language.toUpperCase()}{' '}
-        <span data-testid="movie-release-date"></span>
-        {getTime(props.release_date)}
+        <span data-testid="movie-release-date">
+          {getTime(props.release_date)}
+        </span>
       </p>
       <h6
         className="mt-3 font-bold text-lg cursor-pointer"
