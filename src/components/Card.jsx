@@ -7,6 +7,8 @@ import rt from '../assets/rotten_tomato.png';
 import { useGetGenreListQuery } from '../store/reducers/movieReducer';
 import { useNavigate } from 'react-router-dom';
 
+import getTime from '../utils/utcTime';
+
 const Card = (props) => {
   const {
     data: genres = [],
@@ -18,7 +20,7 @@ const Card = (props) => {
   const navigate = useNavigate();
   if (error) return <p>An error occurred</p>;
   return (
-    <div className="w-60 h-96 mb-10">
+    <div className="w-60 h-96 mb-10" data-testid="movie-card">
       <div className="relative">
         <img
           src={`https://image.tmdb.org/t/p/original${props.poster_path}`}
@@ -42,11 +44,10 @@ const Card = (props) => {
           </p>
         </div>
       </div>
-      <p
-        className="text-[#9CA3AF] text-xs mt-3"
-        data-testid="movie-release-date"
-      >
-        {props.original_language.toUpperCase()} {props.release_date}
+      <p className="text-[#9CA3AF] text-xs mt-3">
+        {props.original_language.toUpperCase()}{' '}
+        <span data-testid="movie-release-date"></span>
+        {getTime(props.release_date)}
       </p>
       <h6
         className="mt-3 font-bold text-lg cursor-pointer"

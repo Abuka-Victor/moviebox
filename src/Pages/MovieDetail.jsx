@@ -15,6 +15,8 @@ import {
 } from '../store/reducers/movieReducer';
 import { Fragment } from 'react';
 
+import getTime from '../utils/utcTime';
+
 const MovieDetail = (props) => {
   const { id } = useParams();
   const {
@@ -49,9 +51,7 @@ const MovieDetail = (props) => {
               </span>
               •{' '}
               <span data-testid="movie-release-date">
-                {isLoading
-                  ? 'Year'
-                  : new Date(movieDetails.release_date).toUTCString()}
+                {isLoading ? 'Year' : getTime(movieDetails.release_date)}
               </span>
               • PG-
               {movieDetails.adult ? '13' : '18'} •
